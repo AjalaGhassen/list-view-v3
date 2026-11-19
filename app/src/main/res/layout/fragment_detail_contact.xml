@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Photo + Boutons Galerie / Caméra -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/ivDetailPhoto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_default_avatar"
+                android:contentDescription="Photo du contact"
+                android:background="#E0E0E0"
+                android:padding="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnGalerie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_galerie"
+                    android:drawableStart="@drawable/ic_gallery"
+                    android:drawablePadding="8dp" />
+
+                <Button
+                    android:id="@+id/btnCamera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/btn_camera"
+                    android:drawableStart="@drawable/ic_camera"
+                    android:drawablePadding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Champs de texte : Prénom, Nom, Téléphone, Email -->
+        <EditText
+            android:id="@+id/etPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_prenom"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:autofillHints="personGivenName" />
+
+        <EditText
+            android:id="@+id/etNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_nom"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:autofillHints="personFamilyName" />
+
+        <EditText
+            android:id="@+id/etTelephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_telephone"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:autofillHints="phoneNumber" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:autofillHints="emailAddress" />
+
+        <!-- Coordonnées GPS : Latitude et Longitude -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/etLatitude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_latitude"
+                android:inputType="numberSigned|numberDecimal"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/etLongitude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="@string/hint_longitude"
+                android:inputType="numberSigned|numberDecimal"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Bouton Carte -->
+        <Button
+            android:id="@+id/btnVoirCarte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_voir_carte"
+            android:backgroundTint="#7B1FA2" />
+
+        <!-- Actions Implicites : Appeler, Envoyer e-mail -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnAppeler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_appeler"
+                android:drawableStart="@drawable/ic_call"
+                android:drawablePadding="8dp"
+                android:backgroundTint="#2E7D32" />
+
+            <Button
+                android:id="@+id/btnEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="@string/btn_envoyer_email"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:backgroundTint="#1565C0" />
+        </LinearLayout>
+
+        <!-- Actions de validation : Enregistrer, Annuler -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnEnregistrer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_enregistrer"
+                android:backgroundTint="#FF6F00" />
+
+            <Button
+                android:id="@+id/btnAnnuler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="@string/btn_annuler"
+                android:backgroundTint="#757575" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
